@@ -35,6 +35,9 @@ def full?(board)
 end
 
 def draw?(board)
+  if won?(board)
+    return false
+  end
   WIN_COMBINATIONS.each do |win_combo|
     if (board[win_combo[0]] == "X" && board[win_combo[1]] == "X" && board[win_combo[2]] == "X") || !full?(board)
       return false
